@@ -9,4 +9,8 @@ class ProductsController < ApplicationController
     end
   end
 
+  def import
+  	Product.import(params[:file])
+  	redirect_to root_url, notice: "PRODUCTS IMPORTED"
+  end
 end
